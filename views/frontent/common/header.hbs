@@ -1,0 +1,49 @@
+
+
+      <header id="teach_coders_header" class="header">
+         <div class="container-fluid">
+            <div class="header-row">
+               <div class="nav_icon" data-trigger="#my_offcanvas1">
+                  <i class="fa fa-bars" aria-hidden="true"></i>
+               </div>
+               <div class="logo-name1">
+                  <a href="/">  <img src="/frontent/images/logo.png" height="135"></a>
+               </div>
+               <div class="header-call-to-action">
+                  <ul>
+                  
+                         <li class="nav-item">
+                           <a class="nav-link" href="/"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Home</a>
+                         </li>
+         {{#each navdata}}
+                   
+                      {{!-- {{log navdata}} --}}
+                     {{!-- <%navdata.forEach((y)=>{%> --}}
+                        <li class="nav-item">
+                          {{!-- <a class="nav-link" href="/<%=y.pageUrl%>"><%=y.pageNavText%></a> --}}
+                            <a class="nav-link" href={{this.pageUrl}}>{{this.pageNavText}}</a>
+                        </li>
+                        {{!-- <%})%> --}}
+                       {{/each}}
+
+
+                        <li class="nav-item">
+                           <a class="nav-link" href="/course">Packages</a>
+                           
+                         </li>
+                   
+                  </ul>
+               </div>
+               <!-- serch box-->
+               <input class="serch_course" type="text"  name="name" value="" placeholder="Type Your Packages.." autocomplete="off">
+               <span id="search_data_list"></span>
+               <!-- /serch box-->
+               <div class="tryself">
+                  {{!-- <a href="Javascript/try-it-your-self-wth-teach-coders"> --}}
+                  <a href="/login">
+                     ADMIN LOGIN
+                  </a>
+               </div>
+            </div>
+         </div>
+      </header>

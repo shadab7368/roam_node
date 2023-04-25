@@ -1,0 +1,88 @@
+
+     {{!-- <%-include('common/head.ejs')-%> --}}
+     {{>head_admin}}
+      <title>Roam Arabia</title>
+   </head>
+   <body>
+    {{!-- <%-include('common/header.ejs')-%> --}}
+    {{>header_admin}}
+      <div class="container-fluid bg-side-nav">
+         <div class="row">
+            <div class="col-lg-2 sidebaare">
+                {{!-- <%-include('common/sidebaar.ejs')-%> --}}
+               {{>sidebaar}}
+            </div>
+            <div class="col-lg-10">
+
+
+             <br><br>
+
+                 
+               {{!-- <%if(sucess && sucess !=''){%> --}}
+               {{#if sucess}}
+                  <div class="alert alert-success" role="alert">      {{sucess}}   </div>
+                       {{!-- <%}else if(err && err !=''){%> --}}
+                       {{else}}
+                  <div class="alert alert-danger" role="alert">        {{err}}  </div> 
+                   {{!-- <%}%>     --}}
+               {{/if}}
+              <div class="dashboard-content-area">
+                <!-- put your contente -->
+
+               <h1>All Products</h1>
+
+               
+               <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                  <thead>
+                     <tr>
+                        <th>Category</th>
+                        <th>Category url</th>
+                        <th>URL</th>
+                        <th>Nav Text</th>
+                        <th>Title</th>
+                        <th>Meta Keyw.</th>
+                        <th>Met Desc.</th>
+                        <th>h1</th>
+                        <th>Video Url</th>
+                        <th>Details</th>
+                        <th>Edit</th>
+                        <th>Delete</th>
+                     </tr>
+                  </thead>
+                  <tbody>
+                     {{!-- <%x.forEach((y)=>{%> --}}
+                     {{#each x}}
+                   
+                     <tr>
+                        <td>{{this.productCat}}</th>
+                        <td>{{this.productCatUrl}}</th>
+                        <td>{{this.productUrl}}</th>
+                           <td>{{this.productNavText}}</td>
+                           <td>{{this.productTitle}}</td>
+                           <td>{{this.productMetaDescrition}}</td>
+                           <td>{{this.productMetaKeyword}}</td>
+                           <td>{{this.productHeading}}</td>
+                           <td>{{this.productyoutube}}</td>
+                           {{!-- <td>{{this.productDetails}}</td> --}}
+                              <td> {{trimString  this.productDetails}}</td>
+                        <td>
+                           <a class="btn btn-primary" href="/admin/products/edit/{{this.productUrl}}">Edit</a> </td>                    
+                        <td><form style="display: inline;" action="/admin/products/delete/{{this.productUrl}}?_method=DELETE" method="POST">
+                              <button style="cursor: pointer;" type="submit" class="btn btn-danger ml-2">Delete</button>
+                           </form>
+                        </td>
+                     </tr>
+                     {{/each}}
+                     {{!-- <%})%> --}}
+                  </tbody>
+               </table>
+
+              <!-- end your content here -->
+             </div>
+
+            </div>
+         </div>
+      </div>
+
+     {{!-- <%-include('common/footer.ejs')-%> --}}
+     {{>footer_admin}}

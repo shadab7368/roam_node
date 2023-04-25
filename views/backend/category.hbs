@@ -1,0 +1,96 @@
+
+     {{!-- <%-include('common/head.ejs')-%> --}}
+     {{>head_admin}}
+      <title>Hello, world!</title>
+   </head>
+   <body>
+    {{!-- <%-include('common/header.ejs')-%> --}}
+    {{>header_admin}}
+      <div class="container-fluid bg-side-nav">
+         <div class="row">
+            <div class="col-lg-2 sidebaare">
+                {{!-- <%-include('common/sidebaar.ejs')-%> --}}
+               {{>sidebaar}}
+            </div>
+            <div class="col-lg-10">
+
+               <br><br>
+             {{#if sucess}}
+               {{!-- <%if(sucess && sucess !=''){%> --}}
+                  <div class="alert alert-success" role="alert">       {{ sucess}}   </div>
+                       {{!-- <%}else if(err && err !=''){%> --}}
+                       {{else}}
+                  <div class="alert alert-danger" role="alert">        {{err}}  </div>   
+
+                  {{/if}}
+
+              <div class="dashboard-content-area">
+                <!-- put your contente -->
+
+               <h1>All Category</h1>
+               <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                  <thead>
+                     <tr>
+                        <th>Category Photo</th>
+                        <th>Category </th>
+                        <th>Category Url</th>
+                        <th>Category Title</th>
+                        <th>Category Meta Keyword</th>
+                        <th>Category Meta Desc</th>
+                        <th>Category Details</th>
+                        <th>Edit</th>
+                        <th>Delete</th>
+                     </tr>
+                  </thead>
+
+                  <tbody>
+                     {{!-- <%x.forEach((y)=>{%> --}}
+
+                    {{#each x }} 
+                     <tr>  
+                        <td>
+                        
+                           {{!-- <%if(y.categoryPhoto){%> --}}
+                           {{#if this.categoryPhoto}}
+                              <img src="/backend/images/{{this.categoryPhoto}}" width="70">
+                              {{else}}
+                                 <img src="/backend/images/no-img.png" width="70">
+                              
+                              {{/if}}
+                        </td>                      
+                        <td>{{this.category}}</td>
+                        <td>{{this.categoryUrl}}</td>
+
+                        <td>{{this.categoryTitle}}</td>
+                        <td>{{this.categoryMeta}}</td>
+                        <td>{{this.categoryDesc}}</td>
+                        {{!-- <td>{{this.categoryDetails}}</td> --}}
+                          <td> {{trimString  this.categoryDetails}}</td>
+
+                        {{!-- <td>{{this.categoryDetails}}</td> --}}
+                        <td>
+                           <a class="btn btn-primary" href="/admin/category/edit/{{this.category}}">Edit</a> </td>
+                           <td>                       
+                           <form style="display: inline;" action="/admin/category/delete/{{this.category}}?_method=DELETE" method="POST">
+                              <button style="cursor: pointer;" type="submit" class="btn btn-danger ml-2">Delete</button>
+                           </form>
+                        </td>
+                     </tr>
+                   {{/each}}
+                     
+                  </tbody>
+               </table>
+
+              <!-- end your content here -->
+             </div>
+
+            </div>
+      
+         </div>
+      </div>
+      
+
+     {{!-- <%-include('common/footer.ejs')-%> --}}
+  
+     {{>footer_admin}}
+  

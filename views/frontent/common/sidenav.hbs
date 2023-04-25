@@ -1,0 +1,33 @@
+<b class="screen-overlay"></b>
+      <!-- offcanvas panel -->
+      <aside>
+            <div class="side-nav-cat">
+               <div class="nav-cat-side">
+               <h2>Packege By Category</h2>
+               <ul>
+                 {{#each allcat}}
+              
+                     <li><a href="/course/{{this.categoryUrl}}/">{{this.category}}</a></li>
+                 
+                  {{/each}}               
+               </ul>
+           </div>
+
+           <div class="nav-cat-side">
+               <h2>All Packege</h2>
+               <ul>
+                
+                  {{#each allcourses}}
+                     <li><a href="/course/{{this.productCat}}/{{this.productUrl}}">{{this.productTitle}}</a></li>
+               
+                  {{/each}}              
+               </ul>
+            </div>
+         </div>
+         
+         <div class="example-banner">
+            <div class="add_text">package Explore program</div>
+            <a href="/course">Explorer package</a>
+         </div>
+      </aside>
+      <!-- offcanvas panel .end -->

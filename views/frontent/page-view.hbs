@@ -1,0 +1,45 @@
+{{!-- <%-include('common/head.ejs')-%> --}}
+{{>head}}
+
+
+
+      {{!-- <title><%=x.pageTitle%></title> --}}
+          <title>{{x.pageTitle}}></title>
+      <meta name="description" content="{{x.pageMetaDescrition}}" />
+      <meta name="keywords" content="{{x.pageMetaKeyword}}" />
+   </head>
+   <body>
+      
+
+      {{!-- <%-include('common/mobile-nav.ejs')-%> --}}
+      {{>mobilenav}}
+      {{!-- <%-include('common/header.ejs')-%> --}}
+      {{>header}}
+      {{!-- <  %if(x.pagePhoto){%> --}}
+        {{!-- <img src="/backend/images/{{x.pagePhoto}}" width="100%" class="img-fluid"> --}}
+      {{#if ( x.pagephoto)}}
+        
+         {{!-- <%}else{%> --}}
+         {{else}}
+            <hr>
+                  <div style="max-height:500px; ove   rflow: hidden;">
+            <img src="/backend/images/{{x.pagePhoto}}" width="100%" class="img-fluid">
+         </div>
+                 
+            {{!-- <%}%> --}}
+            {{/if}}
+       
+      <div class="container py-5">
+               <br/>
+            
+         <h1>{{x.pageHeading}}</h1>
+           
+         <p>{{{x.PageDetails}}}</p>
+       
+
+       {{!-- {{  console.log(x.PageDetails)}} --}}
+
+      </div>
+      
+      {{>footer}}
+      {{!-- <%-include('common/footer.ejs')-%> --}}
