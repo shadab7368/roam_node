@@ -107,7 +107,7 @@ hbs.registerHelper('carddetail', function(passedString) {
 
 //===========BACKEND ROUTER START HERE
 
-// let admin = require('./router/backend/admin')
+let admin = require('./router/backend/admin')
  let adminpages = require('./router/backend/admin-page')
  let admincategory = require('./router/backend/admin-category')
  let adminproducts = require('./router/backend/admin-products')
@@ -115,7 +115,7 @@ hbs.registerHelper('carddetail', function(passedString) {
 
 // // set router
 
-//  app.use('/admin/', admin) // route admin
+  app.use('/admin/', admin) // route admin
  app.use('/admin/pages/', adminpages) // top navigation like (home, about, contact,)
  app.use('/admin/category/', admincategory) //for category like (Java Script, NodeJs, Mongodb)
  app.use('/admin/products/', adminproducts) //for product like ( javascript related all topic || nodejs related All topic..)
