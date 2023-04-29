@@ -60,7 +60,7 @@ router.post('/add-pages/', upload.single('page_Photo'), (req, res)=>{
                    // pagePhoto : req.body.file,
                     PageDetails :req.body.Page_Details
                 }
-                console.log(data)
+          
                 pageModel.create(data)
                 .then((x)=>{
                     req.flash('sucess', 'Your Data has been created on Data base')
@@ -84,7 +84,7 @@ router.post('/add-pages/', upload.single('page_Photo'), (req, res)=>{
                 pagePhoto : req.file.filename,
                 PageDetails :req.body.Page_Details
             }
-            console.log(data)
+           
             pageModel.create(data)
             .then((x)=>{
                 req.flash('sucess', 'Your Data has been created on Data base')
@@ -111,7 +111,7 @@ router.get('/edit-pages/:id', (req, res)=>{
     pageModel.findOne({pageUrl:req.params.id})
     .then((x)=>{
         res.render('../views/backend/pagesEdit', {x})
-        console.log(x)
+     
     })
     .catch((y)=>{
         console.log(y)
@@ -137,7 +137,7 @@ router.put('/edit-pages/:id', upload.single('page_Photo'), (req, res)=>{
             PageDetails :req.body.Page_Details
         }})
         .then((x)=>{
-            console.log(x)
+           
             req.flash('sucess', 'Your Data has sucessfully updated.')
             res.redirect('/admin/pages/')
         }).catch((y)=>{
@@ -158,7 +158,7 @@ router.put('/edit-pages/:id', upload.single('page_Photo'), (req, res)=>{
             PageDetails :req.body.Page_Details
         }})
         .then((x)=>{
-            console.log(x)
+       
             req.flash('sucess', 'Your Data has sucessfully updated.')
             res.redirect('/admin/pages/')
             
