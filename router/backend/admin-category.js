@@ -52,7 +52,7 @@ router.post('/add-category/',  upload.single('category_photo'), (req, res)=>{
             categoryDetails :       req.body.category_details
         })
         .then((x)=>{
-            console.log(x)
+           
             req.flash('sucess', 'Your Data has been created on Data base')
             res.redirect('/admin/category/')
         })
@@ -68,7 +68,7 @@ router.post('/add-category/',  upload.single('category_photo'), (req, res)=>{
             categoryDetails :       req.body.category_details
         })
         .then((x)=>{
-            console.log(x)
+           
             res.redirect('/admin/category/')
         })
 
@@ -98,7 +98,7 @@ router.put('/edit/:id', upload.single('category_photo'), (req, res)=>{
             categoryDetails     :   req.body.category_details
         }})
         .then((x)=>{
-            console.log(x)
+           
             req.flash('sucess', 'Your Data has been updated on Data base')
             res.redirect('/admin/category/')
         })
