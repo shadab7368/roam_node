@@ -42,7 +42,7 @@ router.get('/:id',(req, res)=>{
     .then((x)=>{
        if(x){
         res.render('../views/frontent/page-view', {x})
-        console.log(x)
+
        }
        else{
            res.redirect('/')
