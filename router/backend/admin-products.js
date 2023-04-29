@@ -100,8 +100,8 @@ router.get('/edit/:id', (req, res)=>{
 router.put('/edit/:id', (req, res)=>{
 
     productModel.updateOne({productUrl:req.params.id}, {$set:{
-        productCat		            : 	    req.body.product_Cat,
-        productCatUrl               :       req.body.product_cat_Url,
+       // productCat		            : 	    req.body.product_Cat,
+        //productCatUrl               :       req.body.product_cat_Url,
         productUrl 		            :	    req.body.product_Url,
         productNavText 	            :	    req.body.product_Nav_Text,
         productTitle 		        :	    req.body.product_Title,
