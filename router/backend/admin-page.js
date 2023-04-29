@@ -31,7 +31,7 @@ let upload = multer({
 router.get('/', (req, res)=>{
     pageModel.find({})
     .then((x)=>{
-        res.render('../views/backend/pages', {x})
+        res.render('../views/backend/pages.hbs', {x})
     }).catch((y)=>{
         console.log(y)
     })
